@@ -1,4 +1,24 @@
-﻿using System;
+﻿/*
+LAB-1:
+
+WAP to create class Employee with the following specification.
+    a. Field name: firstName, lastName, salary
+    b. Properties: FirstName, LastName, FullName, Salary
+    c. Parameterized Constructor
+    d. Method: 
+        - IncrementSalary(double s)
+        - Display() // for showing details of employee
+    e. Now, create an object e1 of this class and show use of 
+        - Constructor
+        - Display fullname and salary using Properties
+        - Change the first name
+        - Increment the salary by 10%
+        - Display fullname and salary by calling method
+
+*/
+
+
+using System;
 
 namespace HelloWorld
 {
@@ -17,7 +37,7 @@ namespace HelloWorld
         public string FirstName
         {
             get { return firstName; } 
-            set {  firstName = value; }
+            set { firstName = value; }
         }
 
         public string LastName
@@ -52,11 +72,11 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Employee Radhe = new Employee("Radhe", "Futsal", 20000.55);
-            Console.WriteLine("Full Name: " + Radhe.FullName);
-            Console.WriteLine("Salary: " + Radhe.Salary);
-            Radhe.IncrementSalary(10);
-            Radhe.Display();
+            Employee e1 = new Employee("Ram", "Cena", 20000.55);
+            Console.WriteLine("Full Name: " + e1.FullName);
+            Console.WriteLine("Salary: " + e1.Salary);
+            e1.IncrementSalary(10);
+            e1.Display();
         }
     }
 }
