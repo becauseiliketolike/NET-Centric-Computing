@@ -52,11 +52,10 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Employee Radhe = new Employee("Radhe", "Futsal", 20000.0);
+            Employee Radhe = new Employee("Radhe", "Futsal", 20000.55);
             Console.WriteLine("Full Name: " + Radhe.FullName);
             Console.WriteLine("Salary: " + Radhe.Salary);
             Radhe.IncrementSalary(10);
-            Console.WriteLine("Salary: " + Radhe.Salary);
             Radhe.Display();
         }
     }
