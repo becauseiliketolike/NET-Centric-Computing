@@ -64,7 +64,7 @@ namespace HelloWorld
 
         public void Display()
         {
-            Console.WriteLine("Fullname is: " + FullName + "\nSalary is: " + salary);
+            Console.WriteLine("Fullname: " + FullName + "\nSalary: " + salary);
         }
     }
 
