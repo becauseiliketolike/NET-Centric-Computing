@@ -47,6 +47,7 @@ namespace HelloWorld
             Console.WriteLine("Fullname is: " + FullName + "\nSalary is: " + salary);
         }
     }
+
     class Program
     {
         static void Main(string[] args)
