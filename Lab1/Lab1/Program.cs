@@ -75,6 +75,8 @@ namespace HelloWorld
             Employee e1 = new Employee("Ram", "Cena", 20000.55);
             Console.WriteLine("Full Name: " + e1.FullName);
             Console.WriteLine("Salary: " + e1.Salary);
+            e1.FirstName = "John";
+            e1.LastName = "Shyam";
             e1.IncrementSalary(10);
             e1.Display();
         }
