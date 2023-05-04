@@ -20,7 +20,7 @@ WAP to create class Employee with the following specification.
 
 using System;
 
-namespace HelloWorld
+namespace Employee
 {
     public class Employee
     {
