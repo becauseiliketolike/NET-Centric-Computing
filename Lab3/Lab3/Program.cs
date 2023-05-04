@@ -33,9 +33,8 @@ namespace Student
         }
         public void Display()
         {
-            Console.WriteLine(name);
+            Console.WriteLine(studentID + " " + name + " " + address + " " + studentClass + " " + age);
         }
-
     }
 
     class Program
@@ -44,27 +43,27 @@ namespace Student
         {
             var students = new List<Student>()
             {
-                new Student(1, "rishab", "kathmandu", "BScCSIT", 24),
-                new Student(2, "shubha", "lalitpur", "BScCSIT", 39),
-                new Student(3, "rabin", "kathmandu", "BCA", 27),
-                new Student(4, "norden", "bakhtapur", "BScCSIT", 23)
+                new Student(1, "Rishab", "kathmandu", "BScCSIT", 24),
+                new Student(2, "Shubha", "lalitpur", "BScCSIT", 39),
+                new Student(3, "Rabin", "kathmandu", "BCA", 27),
+                new Student(4, "Norden", "bakhtapur", "BScCSIT", 23)
             };
-            Console.WriteLine("All Students:\n");
+            Console.WriteLine("1. Select all Students:");
             foreach (var student in students)
             {
                 student.Display();
             }
-            Console.WriteLine("\nKathmandu Students:");
+            Console.WriteLine("\n2. Select students who lives in \"kathmandu\":");
             var kathmanduStudents = from student in students where student.address == "kathmandu" select student;
             foreach (var kathmanduStudent in kathmanduStudents)
             {
-                Console.WriteLine(kathmanduStudent.name);
+                kathmanduStudent.Display();
             }
-            Console.WriteLine("\nStudent Subject with age less than 25:");
+            Console.WriteLine("\n3. Select student who reads in BScCSIT and age<=25:");
             var studentsSubject = from student in students where (student.studentClass == "BScCSIT") && (student.age <= 25) select student;
             foreach (var studentSubject in studentsSubject)
             {
-                Console.WriteLine(studentSubject.name);
+                studentSubject.Display();
             }
         }
     }
