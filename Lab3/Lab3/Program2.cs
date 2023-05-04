@@ -1,49 +1,71 @@
+/*
+
+LAB-3:
+
+Create Generic List for students with studentID, name, address, class, age.
+- Add the students.
+- Filter the data via LINQ to find out
+    1. Select all the students
+    2. Select students who lives in kathmandu
+    3. Select student who reads in BScCSIT and age<=25
+
+*/
+
+
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using System.Collections;
 
-namespace Students
+namespace Student
 {
-
     public class Student
-    {
-        int id, age, studentClass;
-        string name, address;
-        public int Id { get; set; }
+    { 
+        public int studentID, age;
+        public string name, address, studentClass;
+
+        public int StudentID { get; set; }
 
         public string Name { get; set; }
 
-        public string Address { get; set ; }
+        public string Address { get; set; }
 
-        public int StudentClass { get; set; }
+        public string StudentClass { get; set; }
 
         public int Age { get; set; }
-
-     
+        
+        public void Display()
+        {
+            Console.WriteLine(StudentID + " " + Name + " " + Address + " " + StudentClass + " " + Age);
+        }
     }
 
     class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             var students = new List<Student>() 
             {
-                new Student() { Id = 1, Name = "Shubha Pradhan", Address = "Budanilkantha", StudentClass = 10, Age = 21  },
-                new Student() { Id = 2, Name = "John Doe", Address = "Gulmi", StudentClass = 12, Age = 23 },
-                new Student() { Id = 3, Name = "Norden", Address = "Bhaktapur", StudentClass = 8, Age = 18 } 
+                new Student() { StudentID=1, Name="rishab", Address="kathmandu", StudentClass="BScCSIT", Age=24 },
+                new Student() { StudentID=2, Name="shubha", Address="lalitpur", StudentClass="BScCSIT", Age=39 },
+                new Student() { StudentID=3, Name="rabin", Address="kathmandu", StudentClass="BCA", Age=27 },
+                new Student() { StudentID=4, Name="norden", Address="bakhtapur", StudentClass="BScCSIT", Age=23}
             };
-
-            var studentAddresses = from student in students where student.Name == "John Doe" select student;
-
-            foreach(var studentAdress in studentAddresses) 
-            { 
-                Console.WriteLine(studentAdress.Address);
-            }
-
+            Console.WriteLine("1. Select all Students:");
             foreach (var student in students)
             {
-               Console.WriteLine(student.Name);
+                student.Display();
+            }
+            Console.WriteLine("\n2. Select students who lives in \"kathmandu\":");
+            var kathmanduStudents = from student in students where student.Address == "kathmandu" select student;
+            foreach (var kathmanduStudent in kathmanduStudents)
+            {
+                kathmanduStudent.Display();
+            }
+            Console.WriteLine("\n3. Select student who reads in BScCSIT and age<=25:");
+            var studentsSubject = from student in students where (student.StudentClass == "BScCSIT") && (student.Age <= 25) select student;
+            foreach (var studentSubject in studentsSubject)
+            {
+                studentSubject.Display();
             }
         }
     }
