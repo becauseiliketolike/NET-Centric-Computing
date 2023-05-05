@@ -48,7 +48,7 @@ namespace Student
                 new Student() { StudentID=1, Name="rishab", Address="kathmandu", StudentClass="BScCSIT", Age=24 },
                 new Student() { StudentID=2, Name="shubha", Address="lalitpur", StudentClass="BScCSIT", Age=39 },
                 new Student() { StudentID=3, Name="rabin", Address="kathmandu", StudentClass="BCA", Age=27 },
-                new Student() { StudentID=4, Name="norden", Address="bakhtapur", StudentClass="BScCSIT", Age=23}
+                new Student() { StudentID=4, Name="norden", Address="bhaktapur", StudentClass="BScCSIT", Age=23}
             };
             Console.WriteLine("1. Select all Students:");
             foreach (var student in students)
