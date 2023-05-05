@@ -20,8 +20,8 @@ namespace Student
 {
     public class Student
     { 
-        public int studentID, age;
-        public string name, address, studentClass;
+        // public int studentID, age;
+        // public string name, address, studentClass;
 
         public int StudentID { get; set; }
 
