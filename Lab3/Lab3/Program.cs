@@ -46,7 +46,7 @@ namespace Student
                 new Student(1, "Rishab", "kathmandu", "BScCSIT", 24),
                 new Student(2, "Shubha", "lalitpur", "BScCSIT", 39),
                 new Student(3, "Rabin", "kathmandu", "BCA", 27),
-                new Student(4, "Norden", "bakhtapur", "BScCSIT", 23)
+                new Student(4, "Norden", "bhaktapur", "BScCSIT", 23)
             };
             Console.WriteLine("1. Select all Students:");
             foreach (var student in students)
