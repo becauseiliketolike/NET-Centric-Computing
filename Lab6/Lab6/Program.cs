@@ -2,7 +2,6 @@
     Write a C# program to perform CRUD operation.
 */
 
-using System;
 using System.Data.SqlClient;
 
 namespace CRUD
@@ -51,7 +50,7 @@ namespace CRUD
         public void Delete(int id)
         {
             db.Open();
-            SqlCommand sqlCommand = new SqlCommand($"DELETE FROM dbo.Users WHERE id = {id}", db);
+            SqlCommand sqlCommand = new SqlCommand($"DELETE FROM dbo.Users WHERE id={id}", db);
             sqlCommand.ExecuteNonQuery();
             Console.Write($"Id {id} record deleted.\n");
             db.Close();
@@ -76,7 +75,7 @@ namespace CRUD
         }
         static void Main(string[] args)
         {
-            Database users = new Database("Data Source=(localdb)\\ProjectModels;Initial Catalog=Users;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            Database database = new Database("Data Source=(localdb)\\ProjectModels;Initial Catalog=Users;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             char continueChoice;
             do
             {
@@ -90,22 +89,22 @@ namespace CRUD
                         Console.Write("Id: ");
                         id = Convert.ToInt32(Console.ReadLine());
                         InputHelper();
-                        users.Create(id, username, password, email, role, status);
+                        database.Create(id, username, password, email, role, status);
                         break;
                     case 2:
-                        users.Read();
+                        database.Read();
                         break;
                     case 3:
                         Console.Write("Enter update Id: ");
                         id = Convert.ToInt32(Console.ReadLine());
                         Console.Write("Enter new data:\n");
                         InputHelper();
-                        users.Update(id, username, password, email, role, status);
+                        database.Update(id, username, password, email, role, status);
                         break;
                     case 4:
                         Console.Write("Enter Id to delete data: ");
                         id = Convert.ToInt32(Console.ReadLine());
-                        users.Delete(id);
+                        database.Delete(id);
                         break;
                     case 5:
                         Console.Write("Program exited.");
