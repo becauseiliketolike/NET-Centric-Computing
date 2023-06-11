@@ -1,0 +1,16 @@
+﻿@model Lab8.Models.Register
+@{
+    ViewData["Title"] = "Register";
+}
+
+<form asp-controller="Home" asp-action="Register">
+    <label asp-for="Username">Username: </label>
+    <input asp-for="Username" />
+    <label asp-for="Password">Password: </label>
+    <input asp-for="Password" />
+    <label asp-for="Email">Email:</label>
+    <input asp-for="Email" />
+    <label asp-for="Phone">Phone:</label>
+    <input asp-for="Phone" />
+    <button type="submit">Submit</button>
+</form>
