@@ -1,42 +1,36 @@
 /*
-Q. Write a C# program that demonstrates the use of delegates to perform arithmetic operations.
+Q. Write a C# program that demonstrates the use of Method overloading and method overriding.
 */
 
-namespace Delegate
+namespace OverloadingOverriding
 {
-    public class Arithmetic
+    public class Multiply
     {
-        public delegate int ArithmeticDelegate(int x, int y);
-        public int Add(int x, int y)
+        public virtual int Operate(int x) => x * x;
+        public string Operate(string x)
         {
-            return x + y;
+            return x + " is appended.";
         }
-        public int Sub(int x, int y)
-        {
-            return x - y;
-        }
-        public int Mul(int x, int y)
-        {
-            return x * y;
-        }
-        public int Div(int x, int y)
-        {
-            return x / y;
-        }
+    }
+    public class MultiplyTwo : Multiply
+    {
+        public override int Operate(int x) => x * 2;
+    }
+    public class MultiplyThree : Multiply
+    {
+        public override int Operate(int x) => x * 3;
     }
     class Program
     {
         static void Main(string[] args)
         {
-            Arithmetic arithmetic = new Arithmetic();
-            Arithmetic.ArithmeticDelegate add = arithmetic.Add;
-            Arithmetic.ArithmeticDelegate sub = arithmetic.Sub;
-            Arithmetic.ArithmeticDelegate mul = arithmetic.Mul;
-            Arithmetic.ArithmeticDelegate div = arithmetic.Div;
-            Console.WriteLine($"Addition = {add(5, 4)}");
-            Console.WriteLine($"Subtraction = {sub(7, 2)}");
-            Console.WriteLine($"Multiplication = {mul(2, 2)}");
-            Console.WriteLine($"Division = {div(9, 4)}");
+            Multiply multiply = new Multiply();
+            MultiplyTwo multiplyTwo = new MultiplyTwo();
+            MultiplyThree multiplyThree = new MultiplyThree();
+            Console.WriteLine($"Multiply = {multiply.Operate(1)}");
+            Console.WriteLine($"Multiply = {multiply.Operate("Norden")}");
+            Console.WriteLine($"MultiplyTwo = {multiplyTwo.Operate(2)}");
+            Console.WriteLine($"MultiplyThree = {multiplyThree.Operate(2)}");
         }
     }
 }
