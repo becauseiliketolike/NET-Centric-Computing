@@ -2,7 +2,7 @@
 Q. Write a C# program using lambda expressions that performs basic mathematical operations on two numbers.
 */
 
-namespace Delegate
+namespace Lambda
 {
     class Program
     { 
