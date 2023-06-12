@@ -1,5 +1,5 @@
 /*
-Q. WAP to implement multiple inheritance using Interface in C#.
+Q. Write a C# program to implement multiple inheritance using Interface.
 */
 
 using System;
@@ -10,37 +10,37 @@ namespace MultipleInheritanceInterface
     interface ISwim { void Swim(); }
     public class Animal
     {
-	string name;
-	public Animal(string name) 
-	{
-	    this.name = name;
-	}
-	public void Name()
-	{
-	    Console.WriteLine($"I am {this.name}.");
-	}
+        string name;
+        public Animal(string name)
+        {
+            this.name = name;
+        }
+        public void Name()
+        {
+            Console.WriteLine($"I am {this.name}.");
+        }
     }
     public class Penguin : Animal, IWalk, ISwim
     {
-	public Penguin(string name) : base(name) {}
+        public Penguin(string name) : base(name) { }
 
-	public void Walk()
-	{
-	    Console.WriteLine("I can Walk.");
-	}
-	public void Swim()
-	{
-	    Console.WriteLine("I can Swim.");
-	}
+        public void Walk()
+        {
+            Console.WriteLine("I can Walk.");
+        }
+        public void Swim()
+        {
+            Console.WriteLine("I can Swim.");
+        }
     }
     class Program
     {
-	public static void Main(string[] args)
-	{
-	    Penguin penguin = new Penguin("Penguin");
-	    penguin.Name();
-	    penguin.Walk();
-	    penguin.Swim();
-	}
+        public static void Main(string[] args)
+        {
+            Penguin penguin = new Penguin("Penguin");
+            penguin.Name();
+            penguin.Walk();
+            penguin.Swim();
+        }
     }
 }
